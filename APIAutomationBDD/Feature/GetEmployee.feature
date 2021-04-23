@@ -14,7 +14,7 @@ Scenario: Get Employee List
 	| 4  | Cedric Kelly        | 433060          | 22           |               |
 	| 5  | Airi Satou          | 162700          | 33           |               |
 	| 6  | Brielle Williamson  | 372000          | 61           |               |
-	| 7  | Herrod Chandler     | 137500          | 61           |               |
+	| 7  | Herrod Chandler     | 137500          | 59           |               |
 	| 8  | Rhona Davidson      | 327900          | 55           |               |
 	| 9  | Colleen Hurst       | 205500          | 39           |               |
 	| 10 | Sonya Frost         | 103600          | 23           |               |
@@ -32,6 +32,7 @@ Scenario: Get Employee List
 	| 22 | Yuri Berry          | 675000          | 40           |               |
 	| 23 | Caesar Vance        | 106450          | 21           |               |
 	| 24 | Doris Wilder        | 85600           | 23           |               |
+	
 	
 	
 	

@@ -134,11 +134,17 @@
     <Compile Include="Modal\JsonModal\RestResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serializer\CreateEmployee\CreateEmployee.cs" />
+    <Compile Include="Steps\CreateEmployeeSteps.cs" />
+    <Compile Include="Steps\DeleteEmployeeSteps.cs" />
     <Compile Include="Steps\GetEmployeeSteps.cs" />
+    <Compile Include="Steps\GetEmpolyeeByIdSteps.cs" />
     <Compile Include="Utils\Employee.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Feature\CreateEmployee.feature" />
+    <None Include="Feature\DeleteEmployee.feature" />
     <None Include="Feature\GetEmployee.feature" />
+    <None Include="Feature\GetEmpolyeeById.feature" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

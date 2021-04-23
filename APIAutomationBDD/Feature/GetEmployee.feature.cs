@@ -154,7 +154,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "7",
                             "Herrod Chandler",
                             "137500",
-                            "61",
+                            "59",
                             ""});
                 table1.AddRow(new string[] {
                             "8",

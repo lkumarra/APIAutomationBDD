@@ -31,7 +31,7 @@ namespace APIAutomationBDD.Steps
             Dictionary<string, string> dict = new Dictionary<string, string>();
             dict.Add("Accpet", "application/json");
             restResponse = HttpClientHelper.PerformGetRequest(requestUrl, dict);
-            Console.WriteLine(restResponse.ResponseData);
+            //Console.WriteLine(restResponse.ResponseData);
         }
         
         [Then(@"Empolyee list should be returned with status code (.*)")]
@@ -43,13 +43,12 @@ namespace APIAutomationBDD.Steps
             getEmployeeRoot = ResponseDataHelper.DeserializeJsonResponse<GetEmployeeRoot>(restResponse.ResponseData);
             for (int i=0; i<24; i++)
             {
-                Assert.AreEqual(getEmployeeRoot.data[i].id, emloyeedata[i].id);
-                Assert.AreEqual(getEmployeeRoot.data[i].employee_name, emloyeedata[i].employee_name);
-               Assert.AreEqual(getEmployeeRoot.data[i].employee_age, emloyeedata[i].employee_age);
-                Assert.AreEqual(getEmployeeRoot.data[i].employee_salary, emloyeedata[i].employee_salary);
+               Assert.AreEqual(getEmployeeRoot.data[i].id, emloyeedata[i].id);
+               Assert.AreEqual(getEmployeeRoot.data[i].employee_name, emloyeedata[i].employee_name);
+               Assert.IsTrue(getEmployeeRoot.data[i].employee_age.Equals(emloyeedata[i].employee_age));
+               Assert.AreEqual(getEmployeeRoot.data[i].employee_salary, emloyeedata[i].employee_salary);
                Assert.AreEqual(getEmployeeRoot.data[i].profile_image, emloyeedata[i].profile_image);
             }
-           
         }
     }
 }

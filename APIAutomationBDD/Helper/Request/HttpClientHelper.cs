@@ -85,5 +85,10 @@ namespace APIAutomationBDD.Helper.Request
         {
             return SendRequest(requestUrl, HttpMethod.Post, httpContent, httpHeaders);
         }
+
+        public static RestResponse PerformDeleteRequest(string requestUrl, Dictionary<string, string> httpHeaders)
+        {
+            return SendRequest(requestUrl, HttpMethod.Delete, httpHeaders);
+        }
     }
 }

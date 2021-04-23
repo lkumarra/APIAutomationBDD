@@ -20,22 +20,22 @@ namespace APIAutomationBDD.Feature
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("CreateEmployee")]
-    public partial class CreateEmployeeFeature
+    [NUnit.Framework.DescriptionAttribute("GetEmpolyeeById")]
+    public partial class GetEmpolyeeByIdFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "CreateEmployee.feature"
+#line 1 "GetEmpolyeeById.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Feature", "CreateEmployee", "\tAs a valid user\r\n\tI am able to add an employee", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Feature", "GetEmpolyeeById", "\tAs a valid user\r\n\tI want to get the detail of employee by Id.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,23 +74,14 @@ namespace APIAutomationBDD.Feature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add two numbers")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("Lavendra Kumar Rajput", "2000", "24", null)]
-        public virtual void AddTwoNumbers(string name, string salary, string age, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Get the details of employee by Id")]
+        [NUnit.Framework.CategoryAttribute("getEmployeeById")]
+        public virtual void GetTheDetailsOfEmployeeById()
         {
-            string[] @__tags = new string[] {
-                    "mytag"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+            string[] tagsOfScenario = new string[] {
+                    "getEmployeeById"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("name", name);
-            argumentsOfScenario.Add("salary", salary);
-            argumentsOfScenario.Add("age", age);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get the details of employee by Id", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,22 +103,26 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("User have a valid uri as \"https://dummy.restapiexample.com/api/v1/create\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User have the baseUri with id as \"http://dummy.restapiexample.com/api/v1/employee" +
+                        "/12\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When(string.Format("User send the post request with \"{0}\", \"{1}\" and \"{2}\".", name, salary, age), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User send the get request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "id",
+                            "employee_name",
+                            "employee_salary",
+                            "employee_age",
+                            "profile_image"});
+                table2.AddRow(new string[] {
+                            "12",
+                            "Quinn Flynn",
+                            "342000",
+                            "22",
+                            ""});
 #line 9
- testRunner.Then("User get the status code as 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 10
- testRunner.And(string.Format("User get the name as \"{0}\"", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 11
- testRunner.And(string.Format("User get the salary as \"{0}\"", salary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 12
- testRunner.And(string.Format("User get the age as \"{0}\"", age), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("User get the Employee details with status code as 200", ((string)(null)), table2, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
